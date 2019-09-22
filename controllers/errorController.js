@@ -66,7 +66,7 @@ const sendErrorProd = (err, req, res) => {
 
   // B) RENDERED WEBSITE
   // A) Operational, trusted error like user tried to access a route that doesn't exit or tried to input invalid data: send message to client
-  if (err.isOperational) }
+  if (err.isOperational) {
     return res.status(err.statusCode).render("error", {
       title: "Something went wrong!",
       msg: err.message
