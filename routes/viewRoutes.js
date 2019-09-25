@@ -5,6 +5,8 @@ const authController = require("./../controllers/authController");
 
 const router = express.Router();
 
+router.use(viewsController.alerts); // run for each and every single request that's coming into this router - basically for all the requests to the website
+
 router.get("/", authController.isLoggedIn, viewsController.getOverview);
 
 router.get("/tour/:slug", authController.isLoggedIn, viewsController.getTour);
